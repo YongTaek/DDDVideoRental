@@ -10,6 +10,11 @@ public class Video {
 
     VideoCopy videoCopy;
 
+    public Video(VideoTitle videoTitle, VideoCopy videoCopy) {
+        this.videoTitle = videoTitle;
+        this.videoCopy = videoCopy;
+    }
+
     public boolean isUnderAge(Customer customer) {
         try {
             // calculate customer's age in years and months
@@ -33,16 +38,8 @@ public class Video {
             int age = ageYr;
 
             // determine if customer is under legal age for rating
-            switch (videoRating) {
-                case TWELVE:
-                    return age < 12;
-                case FIFTEEN:
-                    return age < 15;
-                case EIGHTEEN:
-                    return age < 18;
-                default:
-                    return false;
-            }
+            return videoTitle.isUnderAge(age);
+
 
         } catch (ParseException e) {
             e.printStackTrace();

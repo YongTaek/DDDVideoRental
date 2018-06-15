@@ -1,4 +1,5 @@
 package com.vrs.videorental.domain.register;
 
-public class PriceCode {
+public enum PriceCode {
+    REGULAR, NEW_RELEASE, CHILDREN;
 }
