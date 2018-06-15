@@ -1,0 +1,4 @@
+type: String
+pricecode: String
+rating: String
+title: String
